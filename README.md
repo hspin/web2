@@ -34,7 +34,7 @@ finally fire up the server (note spelling = serve )
 
     grunt serve
 
-now you should be able to ope a browser and see the app at-
+now you should be able to open a browser and see the app at-
 
     localhost:9000
 
