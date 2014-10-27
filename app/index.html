@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js">
+<html ng-app="dunveganApp" class="no-js">
   <head>
     <meta charset="utf-8">
     <title ng-bind="pageTitle"></title>
@@ -27,7 +27,7 @@
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
   </head>
-  <body ng-app="dunveganApp">
+  <body>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -52,26 +52,26 @@
         </div>
         <div class="collapse navbar-collapse" collapse="menuCollapsed">
           <ul class="nav navbar-nav">
-            <li ui-sref-active="active">
-              <a href ui-sref="home">
+            <li>
+              <a href="/#/home">
                 <i class="fa fa-rocket"></i>
                 Main
               </a>
             </li>
-            <li ui-sref-active="active">
-              <a href ui-sref="vision">
+            <li>
+              <a href="/#/vision">
                 <i class="fa fa-book"></i>
                 Manifesto
               </a>
             </li>
-            <li ui-sref-active="active">
-              <a href ui-sref="about">
+            <li>
+              <a href="/#/about">
                 <i class="fa fa-bar-chart-o"></i>
                 Projects & Milestones
               </a>
             </li>
-            <li ui-sref-active="active">
-              <a href ui-sref="contact">
+            <li>
+              <a href="/#/contact">
                 <i class="fa fa-info-circle"></i>
                 Contact
               </a>
@@ -120,13 +120,13 @@
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers.js"></script>
         <!-- endbuild -->
 </body>
 </html>

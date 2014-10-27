@@ -12,17 +12,28 @@ angular
   .module('dunveganApp', [
     'ngResource',
     'ngRoute',
-    'ngTouch'
+    'ngTouch',
   ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'MainCtrl',
+      })
+      .when('/vision', {
+        templateUrl: 'views/vision.html',
+        controller: 'AboutCtrl',
+        data:{ pageTitle: 'Our Vision' }
       })
       .when('/about', {
         templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+        controller: 'AboutCtrl',
+        data:{ pageTitle: 'Projects: Bitsat ' }
+      })
+      .when('/contact', {
+        templateUrl: 'views/contact.html',
+        controller: 'AboutCtrl',
+        data:{ pageTitle: 'Get in Touch' }
       })
       .otherwise({
         redirectTo: '/'
@@ -42,15 +53,6 @@ angular.module( 'dunvegan', [
   'dunvegan.vision',
   'ui.router'
 ])
-
-.config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {
-  $urlRouterProvider.otherwise( '/home' );
-})
-
-.run( function run () {
-  // Use a loading screen and image loader https://github.com/desandro/imagesloaded
-})
-
 .controller( 'AppCtrl', function AppCtrl ( $scope, $location ) {
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
     if ( angular.isDefined( toState.data.pageTitle ) ) {
