@@ -19,21 +19,26 @@ angular
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
+        activePage: 'home',
+        data: 'Main Home'
       })
       .when('/vision', {
         templateUrl: 'views/vision.html',
-        controller: 'AboutCtrl',
-        data:{ pageTitle: 'Our Vision' }
+        controller: 'VisionCtrl',
+        activePage: 'vision',
+        data:'Our Vision'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
-        data:{ pageTitle: 'Projects: Bitsat ' }
+        activePage: 'about',
+        data:'Projects: Bitsat'
       })
       .when('/contact', {
         templateUrl: 'views/contact.html',
-        controller: 'AboutCtrl',
-        data:{ pageTitle: 'Get in Touch' }
+        controller: 'ContactCtrl',
+        activePage: 'contact',
+        data:'Get in Touch'
       })
       .otherwise({
         redirectTo: '/'

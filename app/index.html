@@ -2,7 +2,7 @@
 <html ng-app="dunveganApp" class="no-js">
   <head>
     <meta charset="utf-8">
-    <title ng-bind="pageTitle"></title>
+    <title  ng-controller="titleCtrl"> {{xpageTitle}}</title>
 
     <!-- social media tags -->
     <meta property="og:title" content="Dunvegan Space Systems" />
@@ -35,7 +35,7 @@
     <!-- Add your site or application content here -->
     <div class="container">
 
-      <div class="navbar navbar-default">
+      <div class="navbar navbar-default" ng-controller="navCtrl">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" ng-init="menuCollapsed = true"
             ng-click="menuCollapsed = ! menuCollapsed">
@@ -52,25 +52,25 @@
         </div>
         <div class="collapse navbar-collapse" collapse="menuCollapsed">
           <ul class="nav navbar-nav">
-            <li>
-              <a href="/#/home">
+              <li ng-class="{'active': $route.current.activePage == 'home'}">
+              <a href="/#/">
                 <i class="fa fa-rocket"></i>
                 Main
               </a>
             </li>
-            <li>
+            <li ng-class="{'active': $route.current.activePage == 'vision'}">
               <a href="/#/vision">
                 <i class="fa fa-book"></i>
                 Manifesto
               </a>
             </li>
-            <li>
+            <li ng-class="{'active': $route.current.activePage == 'about'}">
               <a href="/#/about">
                 <i class="fa fa-bar-chart-o"></i>
                 Projects & Milestones
               </a>
             </li>
-            <li>
+            <li ng-class="{'active': $route.current.activePage == 'contact'}">
               <a href="/#/contact">
                 <i class="fa fa-info-circle"></i>
                 Contact
@@ -82,7 +82,6 @@
 
     </div> <!-- end container-->
 
-    <div class="container-fluid" ui-view="main" autoscroll='true'></div>
 
     <div ng-view=""></div>
 

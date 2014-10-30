@@ -39,3 +39,13 @@ now you should be able to open a browser and see the app at-
     localhost:9000
 
 
+## Final build instructions
+
+switch to app root and run
+
+    grunt build
+
+Production ready code will be generated and placed in the directory /dist
+
+ftp /dist directory to production server
+
