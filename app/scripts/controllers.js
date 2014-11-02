@@ -26,8 +26,3 @@ angular.module('dunveganApp')
     $scope.$route = $route;
   });
 
-angular.module('dunveganApp')
-  .controller('titleCtrl', function ($scope) {
-    $scope.xpageTitle = $scope.pageTitle + ' | DSS' ;
-  });
-

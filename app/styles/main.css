@@ -114,6 +114,10 @@ body {
   font-weight: 400;
   src: local('Roboto Regular'), local('Roboto-Regular'), url(fonts/Roboto-Regular.woff) format('woff');
 }
+@font-face {
+  font-family: 'orbitron';
+  src: url(orbitron-bold.otf);
+}
 code,
 pre,
 .pre {
@@ -247,13 +251,15 @@ body {
 }
 #panelOne {
   background: url('carina.jpg') no-repeat center center fixed;
+  margin-top: -20px;
 }
 #panelOne h1 {
-  font-style: "Orbitron";
+  font-style: "orbitron";
 }
 #panelTwo {
   background: url('deepfield.jpg') no-repeat center center fixed;
   background-repeat: repeat-x;
+  margin-top: -20px;
 }
 #panelThree {
   /* FIX THIS */

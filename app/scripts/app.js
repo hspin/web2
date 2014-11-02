@@ -8,11 +8,14 @@
  *
  * Main module of the application.
  */
+
+
 angular
   .module('dunveganApp', [
     'ngResource',
     'ngRoute',
     'ngTouch',
+    'ui.bootstrap'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -20,50 +23,36 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
         activePage: 'home',
-        data: 'Main Home'
+        title: 'Home | DSS'
       })
       .when('/vision', {
         templateUrl: 'views/vision.html',
         controller: 'VisionCtrl',
         activePage: 'vision',
-        data:'Our Vision'
+        title:'Our Vision | DSS'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         activePage: 'about',
-        data:'Projects: Bitsat'
+        title:'Projects: Bitsat | DSS'
       })
       .when('/contact', {
         templateUrl: 'views/contact.html',
         controller: 'ContactCtrl',
         activePage: 'contact',
-        data:'Get in Touch'
+        title:'Get in Touch | DSS'
       })
       .otherwise({
         redirectTo: '/'
       });
   });
 
-
-
-
-/**
-angular.module( 'dunvegan', [
-  'templates-app',
-  'templates-common',
-  'dunvegan.home',
-  'dunvegan.about',
-  'dunvegan.contact',
-  'dunvegan.vision',
-  'ui.router'
-])
-.controller( 'AppCtrl', function AppCtrl ( $scope, $location ) {
-  $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
-    if ( angular.isDefined( toState.data.pageTitle ) ) {
-      $scope.pageTitle = toState.data.pageTitle + ' | DSS' ;
-    }
+angular
+  .module('dunveganApp')
+  .run(function ($rootScope, $route) {
+    $rootScope.$on('$routeChangeSuccess', function () {
+      $rootScope.pageTitle = $route.current.title
+    })
   });
-});
 
-*/
