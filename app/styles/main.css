@@ -232,7 +232,7 @@ body {
   background: url('satellite.jpg') no-repeat center center fixed;
   padding-top: 15%;
   padding-left: 3.5%;
-  min-height: 1000px;
+  min-height: 1100px;
 }
 @media only screen and (min-width: 1199px) {
   #panelZero {
