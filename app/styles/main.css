@@ -234,6 +234,7 @@ body {
   padding-left: 3.5%;
   min-height: 1100px;
 }
+
 @media only screen and (min-width: 1199px) {
   #panelZero {
     background-size: 100%;
@@ -247,6 +248,7 @@ body {
 @media all and (max-width: 768px) {
   #panelZero {
     background-size: 150% 100%;
+    min-height: 1300px;
   }
 }
 #panelOne {
